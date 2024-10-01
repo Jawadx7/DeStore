@@ -1,0 +1,22 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.align-center {
+  align-items: center;
+}
+
+section {
+  margin: 3rem 0;
+  padding: 2rem 5%;
+}
+
+.smooth-zoom-in {
+  transform: scale(1.1);
+}
+
+// main {
+//   padding: 6rem 5%;
+// }
