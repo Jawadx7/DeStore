@@ -14,10 +14,15 @@ const ProductCard = ({ product }) => {
         />
       </Link>
       <div className="p-2 cursor-default">
-        <p className="text-gray-500">{product.name}</p>
+        <p className="text-gray-500">
+          {product.name.length > 20
+            ? product.name.slice(0, 17) + "..."
+            : product.name}
+        </p>
         <span className="flex align-center space-x-2">
           <div className="flex align-center">
-            <BiSolidStar /> <BiSolidStar />
+            <BiSolidStar />
+            <BiSolidStar />
             <BiSolidStar />
             <BiSolidStar />
           </div>
