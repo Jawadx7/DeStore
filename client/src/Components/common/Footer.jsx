@@ -2,20 +2,63 @@ import Logo from "./logo";
 
 const Footer = () => {
   const categories = [
-    "Home Appliances",
-    "Men and Women Clothes",
-    "Glasses and Necklaces",
-    "Kids Wear",
-    "Hoodies",
-    "Sweatpants",
+    "Fashion & Accessories",
+    "Home & Living",
+    "Health & Beauty",
+    "Food & Beverages",
+    "Electronics & Gadgets",
+    "Art & Crafts",
+    "Kids & Baby",
+    "Sports & Outdoors",
   ];
+
   const quick_links = [
-    "Shopping Cart",
-    "Gifts",
-    "Profile",
-    "Track Order",
-    "Customer Help",
-    "About Us",
+    {
+      name: "About Us",
+      path: "#aboutus",
+    },
+    {
+      name: "Customer Help",
+      path: "/",
+    },
+    {
+      name: "Terms & Conditions",
+      path: "/",
+    },
+    {
+      name: "Return Policy",
+      path: "/",
+    },
+  ];
+
+  const socials = [
+    {
+      name: "Facebook",
+      path: "https://www.facebook.com",
+    },
+    {
+      name: "Instagram",
+      path: "https://www.instagram.com",
+    },
+    {
+      name: "Twiiter(X)",
+      path: "https://www.x.com",
+    },
+  ];
+
+  const register_links = [
+    {
+      name: "Login",
+      path: "/login",
+    },
+    {
+      name: "Register as Store Owner",
+      path: "/signup/store-owner",
+    },
+    {
+      name: "Register as Customer",
+      path: "/signup/customer",
+    },
   ];
   return (
     <div className="w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 bg-gray-900 text-white px-[7%] py-[3rem]">
@@ -39,7 +82,7 @@ const Footer = () => {
       </div>
       <div className="grid grid-cols-1 sm:grid-cols-2 my-[2rem] md:my-0">
         <div className="sm:mb-0 mb-[2rem]">
-          <h4 className="text-[15px] font-[100]">TOP CATEGORY</h4>
+          <h4 className="text-[15px] font-[100]">ALL CATEGORIES</h4>
           <ul>
             {categories.map((item) => (
               <li
@@ -66,21 +109,60 @@ const Footer = () => {
           <h4 className="text-[15px] font-[100]">QUICK LINKS</h4>
           <ul>
             {quick_links.map((item) => (
-              <li
-                key={Math.random() * 10}
-                className="cursor-pointer group relative my-[5px] w-fit"
-              >
-                <small className="text-gray-500 hover:text-white group-hover:ml-[2rem] transition-all duration-300">
-                  {item}
-                </small>
-                <span className="absolute top-[50%] left-[-5px] w-[2rem] h-[3px] bg-yellow-500 rounded-sm opacity-[0] group-hover:opacity-[1] transition-all duration-500"></span>
+              <li key={item.name}>
+                <a
+                  href={item.path}
+                  className="cursor-pointer group relative my-[5px] w-fit"
+                >
+                  <small className="text-gray-500 hover:text-white group-hover:ml-[2rem] transition-all duration-300">
+                    {item.name}
+                  </small>
+                  <span className="absolute top-[50%] left-[-5px] w-[2rem] h-[3px] bg-yellow-500 rounded-sm opacity-[0] group-hover:opacity-[1] transition-all duration-500"></span>
+                </a>
               </li>
             ))}
           </ul>
         </div>
       </div>
-      <div className="grid grid-cols-1 sm:grid-cols-2 my-[2rem] md:my-0 md:w-auto w-full mt-[2rem] lg:mt-0">
-        <h1>hello</h1>
+
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:w-auto w-full">
+        <div>
+          <h4 className="text-[15px] font-[100]">GET STARTED</h4>
+          <ul>
+            {register_links.map((item) => (
+              <li key={item.name}>
+                <a
+                  href={item.path}
+                  className="cursor-pointer group relative my-[5px] w-fit"
+                >
+                  <small className="text-gray-500 hover:text-white group-hover:ml-[2rem] transition-all duration-300">
+                    {item.name}
+                  </small>
+                  <span className="absolute top-[50%] left-[-5px] w-[2rem] h-[3px] bg-yellow-500 rounded-sm opacity-[0] group-hover:opacity-[1] transition-all duration-500"></span>
+                </a>
+              </li>
+            ))}
+          </ul>
+        </div>
+        <div>
+          <h4 className="text-[15px] font-[100]">SOCIAL LINKS</h4>
+          <ul>
+            {socials.map((item) => (
+              <li key={item.name}>
+                <a
+                  href={item.path}
+                  target="_blank"
+                  className="cursor-pointer group relative my-[5px] w-fit"
+                >
+                  <small className="text-gray-500 hover:text-white group-hover:ml-[2rem] transition-all duration-300">
+                    {item.name}
+                  </small>
+                  <span className="absolute top-[50%] left-[-5px] w-[2rem] h-[3px] bg-yellow-500 rounded-sm opacity-[0] group-hover:opacity-[1] transition-all duration-500"></span>
+                </a>
+              </li>
+            ))}
+          </ul>
+        </div>
       </div>
     </div>
   );
